@@ -7,3 +7,8 @@ Makefile.in
 configure
 install-sh
 missing
+compile
+config.guess
+config.sub
+depcomp
+ltmain.sh

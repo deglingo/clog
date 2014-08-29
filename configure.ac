@@ -5,12 +5,13 @@ AC_SUBST([pkgconfigdir], ['${libdir}/pkgconfig'])
 
 : ${CFLAGS:=-g -Wall}
 
-dnl AC_PROG_CC
-dnl AM_PROG_CC_C_O
-dnl LT_INIT
+AC_PROG_CC
+AM_PROG_CC_C_O
+LT_INIT
 
 AC_CONFIG_FILES([ \
   Makefile \
+  clog/Makefile \
 ])
 AC_CONFIG_FILES([clog.pc])
 AC_OUTPUT
