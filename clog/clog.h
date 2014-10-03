@@ -19,11 +19,13 @@ typedef enum
            msg);                                \
   } while (0)
 
-#define CL_DEBUG(msg...)                        \
-  CL_LOG(CL_LOG_LEVEL_DEBUG, msg)
+#define CL_DEBUG(msg...) do {                   \
+    CL_LOG(CL_LOG_LEVEL_DEBUG, msg);            \
+  } while (0)
 
-#define CL_ERROR(msg...)                        \
-  CL_LOG(CL_LOG_LEVEL_ERROR, msg);            
+#define CL_ERROR(msg...) do {                   \
+    CL_LOG(CL_LOG_LEVEL_ERROR, msg);            \
+  } while (0)
 
 void cl_log ( const char *domain,
               ClLogLevel level,
