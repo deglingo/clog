@@ -40,6 +40,7 @@ void cl_logv ( const char *domain,
   char *msg;
   vasprintf(&msg, format, args);
   fprintf(stderr, "%s:%s:%d: %s\n", domain, fname, lineno, msg);
+  /* fprintf(stderr, "%s: %s\n", domain, msg); */
   free(msg);
   if (level == CL_LOG_LEVEL_ERROR)
     abort();
