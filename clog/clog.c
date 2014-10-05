@@ -43,6 +43,7 @@ void cl_logv ( const char *domain,
   char *msg;
   msg = g_strdup_vprintf(format, args);
   fprintf(stderr, "%s:%s:%d: %s\n", domain, fname, lineno, msg);
+  fflush(stderr);
   /* fprintf(stderr, "%s: %s\n", domain, msg); */
   g_free(msg);
   if (level == CL_LOG_LEVEL_ERROR)
