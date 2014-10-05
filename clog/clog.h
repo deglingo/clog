@@ -4,6 +4,7 @@
 #ifndef _CLOG_H_
 #define _CLOG_H_
 
+#include <glib.h>
 #include <stdarg.h>
 
 typedef enum
@@ -25,6 +26,13 @@ typedef enum
 
 #define CL_ERROR(msg...) do {                   \
     CL_LOG(CL_LOG_LEVEL_ERROR, msg);            \
+  } while (0)
+
+#define CL_GERROR(error) do {                   \
+    CL_LOG(CL_LOG_LEVEL_ERROR, "%s: %s (%d)",   \
+           g_quark_to_string((error)->domain),  \
+           (error)->message,                    \
+           (error)->code);                      \
   } while (0)
 
 #define CL_BACKTRACE() do {                     \

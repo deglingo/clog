@@ -6,6 +6,6 @@ libdir=@libdir@
 Name: clog
 Description: C Logging Utility
 Version: 0.0.0
-Requires:
+Requires: glib-2.0
 Cflags: -I${includedir}
 Libs: -L${libdir} -lclog

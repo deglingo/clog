@@ -9,6 +9,8 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 LT_INIT
 
+PKG_CHECK_MODULES([GLIB], [glib-2.0])
+
 AC_CONFIG_FILES([ \
   Makefile \
   clog/Makefile \
