@@ -27,6 +27,11 @@ typedef enum
     CL_LOG(CL_LOG_LEVEL_ERROR, msg);            \
   } while (0)
 
+#define CL_BACKTRACE() do {                     \
+    CL_DEBUG("** BACKTRACE **");                \
+    cl_backtrace();                             \
+  } while (0)
+
 void cl_log ( const char *domain,
               ClLogLevel level,
               const char *fname,
@@ -41,5 +46,6 @@ void cl_logv ( const char *domain,
                int lineno,
                const char *format,
                va_list args );
+void cl_backtrace ( void );
 
 #endif
