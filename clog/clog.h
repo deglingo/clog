@@ -24,6 +24,10 @@ typedef enum
     CL_LOG(CL_LOG_LEVEL_DEBUG, msg);            \
   } while (0)
 
+#define CL_TRACE(fmt, args...) do {             \
+    CL_DEBUG("%s (" fmt ")", G_STRFUNC, args);  \
+  } while (0)
+
 #define CL_ERROR(msg...) do {                   \
     CL_LOG(CL_LOG_LEVEL_ERROR, msg);            \
   } while (0)
